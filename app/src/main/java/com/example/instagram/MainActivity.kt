@@ -52,6 +52,13 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        findViewById<Button>(R.id.signOut).setOnClickListener {
+            ParseUser.logOutInBackground()
+            val intent = Intent(this@MainActivity, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
         //queryPosts()
     }
 
